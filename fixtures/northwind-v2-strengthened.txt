@@ -1,0 +1,17 @@
+Northwind Notes Privacy Policy
+
+What we collect: We collect your email address, the notes you write and basic usage statistics such as how often you open the app.
+
+Retention: We keep your data for 7 days after you close your account and then delete it.
+
+Sharing: We do not share your personal data with third parties.
+
+Purposes: We use your data only to run and improve the Northwind Notes service.
+
+Your rights: You can export or delete your data at any time from the account settings.
+
+Your rights: You can also download a full copy of your data as a file whenever you ask us.
+
+Security: All notes are encrypted in transit and at rest, and we never keep unencrypted copies.
+
+Contact: Write to privacy@northwind-notes.example for any privacy question.

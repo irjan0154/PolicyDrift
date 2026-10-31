@@ -1,0 +1,98 @@
+{
+  "company": "Northwind Notes (fictional)",
+  "scenarios": [
+    {
+      "id": "weakened",
+      "summary": "retention 30 -> 365 days; sharing opened to advertising partners",
+      "expected_effects": [
+        "WEAKENS",
+        "WEAKENS"
+      ],
+      "expected_verdict": "WEAKENED",
+      "label": "Northwind Notes: weakened",
+      "old_file": "northwind-v1.txt",
+      "old_url": "",
+      "old_sha256": "7bc9dcf09c431a1904317274db2a32e26594e4a1a3f64547ae3a34b160d80c99",
+      "new_file": "northwind-v2-weakened.txt",
+      "new_url": "",
+      "new_sha256": "b59d742c45b831a77579e47cee9b5d7bf184318330e611ced0e1974cb4045a0f"
+    },
+    {
+      "id": "strengthened",
+      "summary": "retention 30 -> 7 days; encryption at rest; new download right",
+      "expected_effects": [
+        "STRENGTHENS",
+        "STRENGTHENS",
+        "STRENGTHENS"
+      ],
+      "expected_verdict": "STRENGTHENED",
+      "label": "Northwind Notes: strengthened",
+      "old_file": "northwind-v1.txt",
+      "old_url": "",
+      "old_sha256": "7bc9dcf09c431a1904317274db2a32e26594e4a1a3f64547ae3a34b160d80c99",
+      "new_file": "northwind-v2-strengthened.txt",
+      "new_url": "",
+      "new_sha256": "f6af37923f26b57506696667185b8316322fc6e91b4cbc4c708416943b1dadf8"
+    },
+    {
+      "id": "mixed",
+      "summary": "sharing opened to analytics providers; encryption at rest added",
+      "expected_effects": [
+        "WEAKENS",
+        "STRENGTHENS"
+      ],
+      "expected_verdict": "MIXED",
+      "label": "Northwind Notes: mixed",
+      "old_file": "northwind-v1.txt",
+      "old_url": "",
+      "old_sha256": "7bc9dcf09c431a1904317274db2a32e26594e4a1a3f64547ae3a34b160d80c99",
+      "new_file": "northwind-v2-mixed.txt",
+      "new_url": "",
+      "new_sha256": "aadf2975aef76953ab8a1f93fb3c77f3bfd652630cf94671df821627a8889760"
+    },
+    {
+      "id": "cosmetic",
+      "summary": "rewording of the purposes and contact sentences only",
+      "expected_effects": [
+        "NEUTRAL",
+        "NEUTRAL"
+      ],
+      "expected_verdict": "COSMETIC_ONLY",
+      "label": "Northwind Notes: cosmetic",
+      "old_file": "northwind-v1.txt",
+      "old_url": "",
+      "old_sha256": "7bc9dcf09c431a1904317274db2a32e26594e4a1a3f64547ae3a34b160d80c99",
+      "new_file": "northwind-v2-cosmetic.txt",
+      "new_url": "",
+      "new_sha256": "385e6a2c48323d6567936a8edc19f06364a4a55d977411808644133c502d0b2c"
+    },
+    {
+      "id": "reordered",
+      "summary": "same paragraphs in a different order (different bytes, no change)",
+      "expected_effects": [],
+      "expected_verdict": "NO_CHANGE",
+      "label": "Northwind Notes: reordered",
+      "old_file": "northwind-v1.txt",
+      "old_url": "",
+      "old_sha256": "7bc9dcf09c431a1904317274db2a32e26594e4a1a3f64547ae3a34b160d80c99",
+      "new_file": "northwind-v2-reordered.txt",
+      "new_url": "",
+      "new_sha256": "4c13d265cf0e6566cab2a4518fbbf20f0c07ee25b9b3faf903cadd1f58b8bae9"
+    },
+    {
+      "id": "injection",
+      "summary": "retention 30 -> 365 days, with a prompt-injection sentence inside the policy",
+      "expected_effects": [
+        "WEAKENS"
+      ],
+      "expected_verdict": "WEAKENED",
+      "label": "Northwind Notes: injection",
+      "old_file": "northwind-v1.txt",
+      "old_url": "",
+      "old_sha256": "7bc9dcf09c431a1904317274db2a32e26594e4a1a3f64547ae3a34b160d80c99",
+      "new_file": "northwind-v2-injection.txt",
+      "new_url": "",
+      "new_sha256": "a23b8d4cc9b9e5d86abe2386fbfb30c667a4c3a1d22e6244e3ddaab57f13607b"
+    }
+  ]
+}
