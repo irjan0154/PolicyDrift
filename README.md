@@ -12,13 +12,11 @@ It is intentionally not a frontend, not a generic AI oracle and not an escrow. I
 
 | Field | Value |
 |---|---|
-| Network | _fill in after deployment_ |
-| Contract | _fill in after deployment_ |
-| Deployment transaction | _fill in after deployment_ |
-| Deployed source SHA-256 | `sha256sum contracts/policy_drift.py` |
-| Runner | `py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6` |
+| Network | GenLayer Studio (studio.genlayer.com), mode "Normal (Full Consensus)" |
+| Contract | `0x5eC4529a74234035e366c95143e50ffa283A5D56` |
+| Live result | 6 of 6 labelled scenarios returned the expected verdict (one run each) |
 
-The step-by-step deployment and live-run guide is in [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md). Live results, once recorded, belong in that file and are not claimed anywhere else in this README.
+The step-by-step deployment and live-run guide, and the full live record, are in [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
 
 ## The problem
 
@@ -147,7 +145,7 @@ Everything below was run against the source in this repository.
 
 A green suite shows the contract passes its tests, not that the tests would notice a deleted guard. The mutation sweep removes or reverses one rule at a time (the validator's comparison, the hash check, the quote grounding, the slot release, the error-class handling and others) and reruns the whole suite. It found real gaps: a leader forging only the round outcome, and (while writing `docs/CONSENSUS.md`) stored fields such as quotes that validators did not check, which every validator now verifies. Both have their own tests. Each equivalent mutant carries a written argument in `scripts/mutate.py`.
 
-What Direct Mode does **not** cover, and what the live run is for: real multi-validator consensus with different models, real model answers, and closure serialisation under `run_nondet_unsafe`. Live results are recorded in [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) once they exist.
+What Direct Mode does **not** cover, and what the live run is for: real multi-validator consensus with different models, real model answers, and closure serialisation under `run_nondet_unsafe`. The six live scenarios above ran on Studio without error; they show the contract works end to end, but they are one run each and do not measure how stable the models' answers are across many runs.
 
 ## Limitations
 
@@ -177,7 +175,7 @@ docs/                         consensus rule, security notes, deployment and liv
 1. [`docs/CONSENSUS.md`](docs/CONSENSUS.md): what must agree and why.
 2. [`contracts/policy_drift.py`](contracts/policy_drift.py): start at `verdict_from`, then `parse_model_output` (the grounding gate), then `_analyze` and `assess`.
 3. [`tests/direct/test_validator.py`](tests/direct/test_validator.py): whether the contract has a validator or only a shape check.
-4. [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md): the live evidence.
+4. [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md): the live evidence (contract address, scenarios, observed results).
 
 ## Development
 
